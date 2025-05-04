@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传视频 - 短视频平台</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="upload-container">
+        <h1>上传视频</h1>
+        <form id="uploadForm" method="POST" enctype="multipart/form-data">
+            <div class="upload-area" id="dropZone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>点击或拖拽视频文件到这里</p>
+                <input type="file" id="videoFile" name="video" accept="video/*" hidden>
+            </div>
+            
+            <div class="preview-area" hidden>
+                <video id="videoPreview" controls></video>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="title" placeholder="视频标题" required>
+            </div>
+            
+            <div class="form-group">
+                <textarea name="description" placeholder="添加视频描述..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="tags" placeholder="添加标签（用空格分隔）">
+            </div>
+
+            <div class="buttons">
+                <button type="button" class="cancel-btn" onclick="window.location.href='/'">取消</button>
+                <button type="submit" class="submit-btn">发布</button>
+            </div>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+</body>
+</html> 

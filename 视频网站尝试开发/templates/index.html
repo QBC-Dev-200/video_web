@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>短视频平台</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部导航栏 -->
+        <nav class="top-nav">
+            <div class="nav-item active">推荐</div>
+            <div class="nav-item">关注</div>
+        </nav>
+
+        <!-- 视频容器 -->
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video src="" loop></video>
+                
+                <!-- 右侧互动按钮 -->
+                <div class="interaction-buttons">
+                    <div class="button">
+                        <i class="fas fa-heart"></i>
+                        <span>12.5k</span>
+                    </div>
+                    <div class="button">
+                        <i class="fas fa-comment"></i>
+                        <span>2.3k</span>
+                    </div>
+                    <div class="button">
+                        <i class="fas fa-share"></i>
+                        <span>分享</span>
+                    </div>
+                </div>
+
+                <!-- 视频信息 -->
+                <div class="video-info">
+                    <div class="author">@用户名</div>
+                    <div class="description">这是视频描述 #短视频 #创意</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航栏 -->
+        <div class="bottom-nav">
+            <div class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>首页</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-search"></i>
+                <span>搜索</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-plus-square"></i>
+                <span>发布</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-inbox"></i>
+                <span>消息</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>我的</span>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频 - 短视频平台</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/video_index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="video-page-container">
+        <!-- 返回按钮 -->
+        <button class="back-btn" onclick="window.history.back()">
+            <i class="fas fa-arrow-left"></i> 返回
+        </button>
+
+        <!-- 视频播放区域 -->
+        <div class="video-container">
+            <video id="mainVideo" controls controlsList="nodownload"></video>
+            
+            <!-- 视频信息 -->
+            <div class="video-info">
+                <div class="author-info">
+                    <img class="author-avatar" alt="作者头像">
+                    <div class="author-details">
+                        <div class="author-name">@用户名</div>
+                        <div class="video-title">视频标题</div>
+                    </div>
+                </div>
+                <div class="video-description"></div>
+                <div class="video-stats">
+                    <span class="stat-item" id="likeButton">
+                        <i class="fas fa-heart"></i>
+                        <span class="likes-count">0</span>
+                    </span>
+                    <span class="stat-item" id="commentButton">
+                        <i class="fas fa-comment"></i>
+                        <span class="comments-count">0</span>
+                    </span>
+                    <span class="stat-item" id="collectButton">
+                        <i class="fas fa-bookmark"></i>
+                        <span class="collections-count">0</span>
+                    </span>
+                </div>
+
+                <!-- 添加评论区域 -->
+                <div class="comments-section" style="display: none;">
+                    <div class="comment-input">
+                        <textarea placeholder="写下你的评论..."></textarea>
+                        <button class="send-comment">发送</button>
+                    </div>
+                    <div class="comments-list">
+                        <!-- 评论将通过JavaScript动态加载 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 将视频ID传递给JavaScript
+        const videoId = '{{ video_id }}';
+    </script>
+    <script src="{{ url_for('static', filename='js/video_index.js') }}"></script>
+</body>
+</html> 

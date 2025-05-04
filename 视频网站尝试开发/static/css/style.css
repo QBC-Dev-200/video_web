@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.app-container {
+    height: 100vh;
+    position: relative;
+}
+
+/* 顶部导航 */
+.top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    z-index: 100;
+}
+
+.top-nav .nav-item {
+    margin: 0 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.top-nav .nav-item.active {
+    font-weight: bold;
+}
+
+/* 视频容器 */
+.video-container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.video-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* 互动按钮 */
+.interaction-buttons {
+    position: absolute;
+    right: 10px;
+    bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.interaction-buttons .button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.interaction-buttons i {
+    font-size: 28px;
+}
+
+.interaction-buttons span {
+    font-size: 12px;
+}
+
+/* 视频信息 */
+.video-info {
+    position: absolute;
+    bottom: 120px;
+    left: 10px;
+    padding: 10px;
+}
+
+.video-info .author {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.video-info .description {
+    font-size: 14px;
+    margin-left: 50px;
+}
+
+/* 底部导航 */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.bottom-nav .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.bottom-nav i {
+    font-size: 20px;
+}
+
+.bottom-nav span {
+    font-size: 12px;
+}
+
+/* 播放指示器样式 */
+.play-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.play-indicator i {
+    font-size: 30px;
+    color: white;
+}
+
+/* 视频暂停时显示播放图标 */
+video:not(:playing) + .play-indicator {
+    opacity: 1;
+}
+
+/* 进度条容器 */
+.progress-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* 缓冲条 */
+.buffer-bar {
+    position: absolute;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 0;
+    transition: width 0.1s ease;
+}
+
+/* 进度条 */
+.progress-bar {
+    position: absolute;
+    height: 100%;
+    background-color: #fe2c55;
+    width: 0;
+    transition: width 0.1s ease;
+}
+
+/* 鼠标悬停时显示进度条 */
+.progress-container:hover {
+    height: 8px;
+}
+
+/* 作者信息容器 */
+.author-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.author-container:hover {
+    opacity: 0.8;
+}
+
+/* 作者头像 */
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+} 

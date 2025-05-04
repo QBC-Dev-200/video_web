@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户主页 - 短视频平台</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/userhome.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="profile-container">
+        <!-- 用户信息区域 -->
+        <div class="user-info" data-user-id="{{ user_msg.id }}">
+            <img class="avatar" src="/get_user_img/{{ user_msg.img }}" alt="头像">
+            <div class="info-text">
+                <h1>{{ user_msg.username }}</h1>
+                <p class="bio">{{ user_msg.intor }}</p>
+            </div>
+        </div>
+
+        <!-- 视频网格区域 -->
+        <div class="video-grid" id="videoGrid">
+            <!-- 视频将通过JavaScript动态加载 -->
+        </div>
+
+        <!-- 返回按钮 -->
+        <button class="back-btn" onclick="window.history.back()">
+            <i class="fas fa-arrow-left"></i> 返回
+        </button>
+    </div>
+    <script src="{{ url_for('static', filename='js/userhome.js') }}"></script>
+</body>
+</html> 
