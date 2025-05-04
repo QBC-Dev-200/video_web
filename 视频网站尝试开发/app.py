@@ -7,9 +7,6 @@ from datetime import datetime, timedelta
 import os
 import random
 import uuid
-import whisper
-import soundfile as sf
-
 
 app = Flask(__name__)
 VIDEO_PATH=os.path.join(os.path.abspath(os.path.dirname(__file__)),'static','video')
@@ -919,6 +916,7 @@ def get_aideo_img(img_name):
     except Exception as e:
         return jsonify({'error':str(e)}),500
 
+'''
 def recognize_lyrics(audio_path):
     mole=whisper.load_model('base')
     result = mole.transcribe(audio_path, language='zh')
@@ -942,6 +940,7 @@ def get_music_words():
        
     except Exception as e:
         return jsonify({'error':str(e)}),500
+'''
 
 @app.route('/get_historical_record',methods=['POST'])
 @request_required
